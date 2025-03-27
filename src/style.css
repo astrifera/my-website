@@ -54,7 +54,7 @@ body {
 }
 
 a {
-  text-decoration-style: wavy;
+  text-decoration-style: solid;
   color: var(--h-brown);
 }
 
