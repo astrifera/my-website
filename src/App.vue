@@ -7,7 +7,10 @@ import lkin from './assets/3f_lkin.svg';
 import mail from './assets/4f_mail.svg';
 import gsap from 'gsap';
 
-const modal = ref(null)
+const modal = ref(null);
+
+const linkedInUrl = "https://www.linkedin.com/in/hosanna-gamb%C3%BAs-28161846/";
+const dribbbleUrl = "https://dribbble.com/hosannagambus";
 
 const links = {
   tree: [
@@ -19,7 +22,7 @@ const links = {
       background: 'var(--h-yellow)',
     },
     {
-      href: 'https://dribbble.com/hosannagambus',
+      href: dribbbleUrl,
       label: 'My portafolio',
       color: 'var(--h-brown)',
       background: 'var(--h-pink)',
@@ -48,7 +51,7 @@ const links = {
       image: dribbble,
     },
     {
-      href: 'https://www.linkedin.com/in/hosanna-gamb%C3%BAs-28161846/',
+      href: linkedInUrl,
       image: lkin,
     },
     {
@@ -56,10 +59,13 @@ const links = {
       image: mail,
     }
   ],
-}
+};
 
 function openDialog() {
   modal.value.showModal();
+  modal.value.scrollTo(0, 0);
+  gsap.from(".dialog-profile", {y: -20, opacity: 0, duration: 0.5, delay: 0.4});
+  gsap.from(".dialog-content-copy article", {y: -20, opacity: 0, duration: 0.5, delay: 0.6});
 }
 
 function closeDialog() {
@@ -100,13 +106,13 @@ onMounted(() => {
           <br/><br/>
           I know this sounds cheesy, but I really do work with love, and my creative process is all about transparency. Trust me, you’ll notice that in every project we navigate together.
           <br/><br/>
-          For more specific blah blah blah, I invite you to check out my profile and connect on LinkedIn.
+          For more specific blah blah blah, I invite you to check out my profile and connect on <a :href="linkedInUrl" target="_blank">LinkedIn</a>.
           <br/><br/>
           En français SVP... Vu que j'habite au Québec, La seule Province de la langue franglaise en Amérique du Nord, Je ne te niaise pas quand je dis: Je parle français aussi.
           <br/><br/>
           Se habla español... Si prefieres comunicarte con verdaderas erres y eñes. Porfa avisame, también hablo perfecto español.
           <br/><br/>
-          Even if what you're looking for isn’t in MY PORTFOLIO, don’t be shy! Email me, and let's see how we can elevate your project to new heights! :)</p>
+          Even if what you're looking for isn’t in <a :href="dribbbleUrl" target="_blank">MY PORTFOLIO</a>, don’t be shy! Email me, and let's see how we can elevate your project to new heights! :)</p>
         </article>
       </div>
     </div>
