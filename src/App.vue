@@ -11,13 +11,13 @@ const modal = ref(null)
 
 const links = {
   tree: [
-    // {
-    //   href: null,
-    //   dialog: true,
-    //   label: 'About and blah blah blah',
-    //   color: 'var(--h-brown)',
-    //   background: 'var(--h-yellow)',
-    // },
+    {
+      href: null,
+      dialog: true,
+      label: 'About and blah blah blah',
+      color: 'var(--h-brown)',
+      background: 'var(--h-yellow)',
+    },
     {
       href: 'https://dribbble.com/hosannagambus',
       label: 'My portafolio',
@@ -30,12 +30,12 @@ const links = {
       color: 'var(--h-background)',
       background: 'var(--h-pink2)',
     },
-    {
-      href: 'https://society6.com/astrifera',
-      label: 'Society6 store',
-      color: 'var(--h-brown)',
-      background: 'var(--h-orange)',
-    },
+    // {
+    //   href: 'https://society6.com/astrifera',
+    //   label: 'Society6 store',
+    //   color: 'var(--h-brown)',
+    //   background: 'var(--h-orange)',
+    // },
 
   ],
   footer: [
@@ -85,9 +85,32 @@ onMounted(() => {
           </li>
       </ul>
   </section>
-  <!-- <dialog ref="modal">
-    <div class="close-about-me" @click="closeDialog"></div>
-  </dialog> -->
+  <dialog ref="modal">
+    <div class="close-about-me" @click="closeDialog">
+      <div class="close-about-me-icon"></div>
+    </div>
+    <div class="dialog-content">
+      <div class="dialog-profile"></div>
+      <div class="dialog-content-copy">
+        <article>
+          <h2>Hello.</h2>
+          <p>I’m Hosanna, an experienced Art Director and Graphic Designer, based in the Highest (yep, the top floor of my Montréal condo).
+          <br/><br/>
+          I'm a full-time freelancer, with a strong focus on Brand Identity solutions and CPG packaging. Throughout my career, I’ve had the privilege of working on diverse projects, from large-scale brands to boutique productions.
+          <br/><br/>
+          I know this sounds cheesy, but I really do work with love, and my creative process is all about transparency. Trust me, you’ll notice that in every project we navigate together.
+          <br/><br/>
+          For more specific blah blah blah, I invite you to check out my profile and connect on LinkedIn.
+          <br/><br/>
+          En français SVP... Vu que j'habite au Québec, La seule Province de la langue franglaise en Amérique du Nord, Je ne te niaise pas quand je dis: Je parle français aussi.
+          <br/><br/>
+          Se habla español... Si prefieres comunicarte con verdaderas erres y eñes. Porfa avisame, también hablo perfecto español.
+          <br/><br/>
+          Even if what you're looking for isn’t in MY PORTFOLIO, don’t be shy! Email me, and let's see how we can elevate your project to new heights! :)</p>
+        </article>
+      </div>
+    </div>
+  </dialog>
   <footer>
       <ul class="social-media-list">
         <li class="social-media-list-item" v-for="(footerLink, index) in links.footer" :key="index">
